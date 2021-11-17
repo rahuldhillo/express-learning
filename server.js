@@ -1,13 +1,11 @@
 const express = require("express");
-
-//below object will have functions
 const app = express();
 
-//first method we use is listen
-//run by node server, server will start
-// '/' means homepage, and will print cannot GET /
-// add a call back function, as a second parameter,
-// this will run after server will start
-app.listen(3000, () => {
-  console.log("server is running");
+// Our port is hardcoded below, if port is unavaiable then we have a prob.
+// So we will create a env variable and use 3000 as fall back
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`server is running on PORT ${PORT}`);
 });
