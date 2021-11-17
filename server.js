@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 // for get req for root and pass second parameter
 // for req and res
 app.get("/", (req, res) => {
-  res.send("Hello from Express");
+  res.send("<h1>Hello from Express..,</h1>");
 });
 
 app.listen(PORT, () => {
