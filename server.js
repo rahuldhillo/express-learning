@@ -5,17 +5,13 @@ const path = require("path");
 
 const PORT = process.env.PORT || 3000;
 
-// It is simple to create routes in Express unlike Node
-// Static Middleware -
-// If we do not want to create route and out site is static
-// We only need to serve the pages
-// We can tell Express that where is our static folder
-// then we do not need to create routes
+// in public folder the index.html is by default acting as default file
+// it is a convention
+// So static content will load index file by default
+// we can change about.html in browser path but for now we can use route
+// We cankeep CSS and image file in public forlder as static content
+// and then include in out html by simply using /path
 
-// to use middleware we use .use
-// move index and about.html in public
-// about.html will not get
-// to resolve use full path for static ocntent eg. "about.html"
 app.use(express.static("public"));
 
 app.listen(PORT, () => {
