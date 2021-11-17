@@ -5,16 +5,17 @@ const path = require("path");
 
 const PORT = process.env.PORT || 3000;
 
-// Now to generate multiple pages for our Website
-// We will create new routes
+// It is simple to create routes in Express unlike Node
+// Static Middleware -
+// If we do not want to create route and out site is static
+// We only need to serve the pages
+// We can tell Express that where is our static folder
+// then we do not need to create routes
 
-app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname + "/index.html"));
-});
-
-app.get("/about", (req, res) => {
-  res.sendFile(path.resolve(__dirname + "/about.html"));
-});
+// to use middleware we use .use
+// move index and about.html in public
+// about.html will not get
+app.use(express.static("public"));
 
 app.listen(PORT, () => {
   console.log(`server is running on PORT ${PORT}`);
