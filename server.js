@@ -15,6 +15,7 @@ const PORT = process.env.PORT || 3000;
 // to use middleware we use .use
 // move index and about.html in public
 // about.html will not get
+// to resolve use full path for static ocntent eg. "about.html"
 app.use(express.static("public"));
 
 app.listen(PORT, () => {
