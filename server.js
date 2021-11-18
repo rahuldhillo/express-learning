@@ -10,12 +10,12 @@ app.use(express.static("public"));
 
 app.use(mainRouter);
 
-// middleware is simply a func in express
-// middleware is between req and res
-// we will process res based on middleware after req
-// different types of middleware.. application level, router level etc.
-// and there are middleware for individual routes too - route middleware
-// we have some built in middleware in express like express.static, error handling etc.
+// Designining custom middleware
+// We will simulate a req
+// send dummy api key and check key to process req
+// else send message to log not valid
+// create route for path like /api/products?api_key=1234567
+// create a seprate middlware folder
 
 app.listen(PORT, () => {
   console.log(`server is running on PORT ${PORT}`);
