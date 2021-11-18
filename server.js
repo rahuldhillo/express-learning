@@ -8,9 +8,14 @@ app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 
-// we can use first parameter as prefix
+app.use(mainRouter);
 
-app.use("/en", mainRouter);
+// middleware is simply a func in express
+// middleware is between req and res
+// we will process res based on middleware after req
+// different types of middleware.. application level, router level etc.
+// and there are middleware for individual routes too - route middleware
+// we have some built in middleware in express like express.static, error handling etc.
 
 app.listen(PORT, () => {
   console.log(`server is running on PORT ${PORT}`);
