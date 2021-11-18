@@ -9,7 +9,12 @@ const PORT = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 
-console.log(app.get("view engine"));
+// Below will print ejs
+// console.log(app.get("view engine"));
+
+// Below means that template engine will search in this folder
+// So we need to create a views folder
+console.log(app.get("views"));
 
 app.use(express.static("public"));
 
