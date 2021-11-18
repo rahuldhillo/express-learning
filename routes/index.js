@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const apiKeyMiddleware = require("../middlewares/apiKey");
 
 // define routes
 
@@ -19,7 +20,9 @@ router.get("/download", (req, res) => {
 });
 
 // send json and array of objects to api
-router.get("/api/products", (req, res) => {
+// pass middleware as second argument
+
+router.get("/api/products", apiKeyMiddleware, (req, res) => {
   res.json([
     {
       id: "123",
