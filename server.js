@@ -7,15 +7,21 @@ app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 
-// now instead of sendFile we will use render
-// render will render the view/ templates
-// no need to use .ejs extension just pass the name
+// Now dynamically change title
+// We can send data from server to our template
+// Use second parameter of render
+// pass object and in it data
+
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", {
+    title: "My Home Page",
+  });
 });
 
 app.get("/about", (req, res) => {
-  res.render("about");
+  res.render("about", {
+    title: "My About Page",
+  });
 });
 app.get("/download", (req, res) => {
   res.download(path.resolve(__dirname + "/about.html"));
