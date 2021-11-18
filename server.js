@@ -7,11 +7,6 @@ app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 
-// Now dynamically change title
-// We can send data from server to our template
-// Use second parameter of render
-// pass object and in it data
-
 app.get("/", (req, res) => {
   res.render("index", {
     title: "My Home Page",
