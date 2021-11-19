@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const apiKeyMiddleware = require("../middlewares/apiKey");
 
-// define routes
+// router level middleware, pass middleware directly and it will apply to all routes
+router.use(apiKeyMiddleware);
 
 router.get("/", (req, res) => {
   res.render("index", {
@@ -19,10 +20,7 @@ router.get("/download", (req, res) => {
   res.download(path.resolve(__dirname + "/about.html"));
 });
 
-// send json and array of objects to api
-// pass middleware as second argument
-
-router.get("/api/products", apiKeyMiddleware, (req, res) => {
+router.get("/api/products", (req, res) => {
   res.json([
     {
       id: "123",
