@@ -1,7 +1,7 @@
 //to compile jsx install babel
 
 const App = () => {
-  return <div>Hello from react</div>;
+  return <h1>Hello from react</h1>;
 };
 
 ReactDOM.render(<App />, document.getElementById("app"));
