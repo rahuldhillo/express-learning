@@ -14,12 +14,15 @@ const App = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        setProducts(data);
       });
   }
 
   return (
     <ul className="list-group">
-      <li className="list-group-item">Cras justo odio</li>
+      {products.map((product) => {
+        <li className="list-group-item">{product.name}</li>;
+      })}
     </ul>
   );
 };
