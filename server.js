@@ -6,7 +6,7 @@ const mainRouter = require("./routes/index");
 
 app.set("view engine", "ejs");
 
-//Global middleware, we write app.use instead of router.use
+// We have many Express third party middlewares eg. cookie middleware etc.
 
 app.use(express.static("public"));
 
