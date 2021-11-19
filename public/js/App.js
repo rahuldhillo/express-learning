@@ -1,7 +1,9 @@
-//to compile jsx install babel
-
 const App = () => {
-  return <h1>Hello from react</h1>;
+  return (
+    <ul className="list-group">
+      <li className="list-group-item">Cras justo odio</li>
+    </ul>
+  );
 };
 
 ReactDOM.render(<App />, document.getElementById("app"));

@@ -9,7 +9,6 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(mainRouter);
 
-// Created a new page and route for that
 app.use(productRouter);
 
 app.listen(PORT, () => {

@@ -17,7 +17,6 @@ router.get("/download", (req, res) => {
   res.download(path.resolve(__dirname + "/about.html"));
 });
 
-// We can pass multiple middleware in an array as second argument [..., ...]
 router.get("/api/products", apiKeyMiddleware, (req, res) => {
   res.json([
     {
