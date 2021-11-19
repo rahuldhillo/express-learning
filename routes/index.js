@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const apiKeyMiddleware = require("../middlewares/apiKey");
+// const apiKeyMiddleware = require("../middlewares/apiKey");
 
 // router level middleware, pass middleware directly and it will apply to all routes
 // even homepage and about page will not work without api_key now as middleware is applied to all
-router.use(apiKeyMiddleware);
+// router.use(apiKeyMiddleware);
 
 router.get("/", (req, res) => {
   res.render("index", {
